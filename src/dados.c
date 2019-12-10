@@ -209,31 +209,6 @@ void quicksort(dado_t **dados, int esquerda, int direita)
 		}
 }
 
-int particiona_iterativo(dado_t **dados, int esquerda, int direita)
-{
-
-	float pivot;
-
-	int med,i,j;
-
-	med = med_tres(dados, esquerda, direita);
-
-	pivot = dados[med]->prize;
-
-	i = esquerda -1;
-
-	for(j = esquerda; j <= direita - 1; j++)
-	{
-		if(dados[j]->prize <= pivot)
-		{
-			i++;
-			swap(dados,i,j);
-		}
-	}
-	swap(dados, i+1, direita);
-	return (i+1);
-}
-
 int particiona(dado_t **dados, int esquerda, int direita)
 {
 	int med,i,j;
